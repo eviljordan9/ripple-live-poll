@@ -1,10 +1,11 @@
+/** Copy text even when the Clipboard API is blocked (iframes, permissions). */
 export async function copyToClipboard(text: string): Promise<boolean> {
   if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
     try {
       await navigator.clipboard.writeText(text);
       return true;
     } catch {
-      /* iframe / permissions */
+      // Permissions Policy / insecure context — try the execCommand path.
     }
   }
   return fallbackCopy(text);

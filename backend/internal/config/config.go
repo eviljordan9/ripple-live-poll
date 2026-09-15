@@ -3,12 +3,12 @@ package config
 import "os"
 
 type Config struct {
-	HTTPAddr     string
-	MongoURI     string
-	MongoDB      string
-	RedisAddr    string
-	JWTSecret    string
-	CookieName   string
+	HTTPAddr   string
+	MongoURI   string
+	MongoDB    string
+	RedisAddr  string
+	JWTSecret  string
+	CookieName string
 	SecureCookie bool
 }
 
